@@ -1376,8 +1376,13 @@ let totalKills = 0, totalYenEarned = 0, totalGacha = 0, goldenKills = 0;
         showToast("📀 Загрузка выполнена", false);
     }
     
-    function resetGame() { if(confirm("Сбросить всё?")) { localStorage.removeItem("SorcererEvolution"); location.reload(); } }
-    
+    function resetGame() { 
+    if(confirm("Сбросить всё?")) { 
+        localStorage.removeItem("SorcererEvolution"); 
+        localStorage.removeItem("tutorialShown");  // ← ОЧИСТКА ТУТОРИАЛА
+        location.reload(); 
+    } 
+}
     function renderCurrentEquipment() {
         let container = document.getElementById("currentEquipmentDisplay");
         if (!container) return;
