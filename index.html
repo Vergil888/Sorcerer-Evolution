@@ -455,38 +455,43 @@ let loadingInterval = setInterval(() => {
 }, 80);
     
     // ========== ВРАГИ (30 глав) ==========
-    let enemies = [
-        { name: "Школьное проклятие", hp: 33, attack: 6, rewardMin: 15, rewardMax: 35 },
-        { name: "Проклятие в техникуме", hp: 60, attack: 10, rewardMin: 40, rewardMax: 70 },
-        { name: "Кефа", hp: 99, attack: 14, rewardMin: 80, rewardMax: 120 },
-        { name: "Ханамо", hp: 154, attack: 18, rewardMin: 130, rewardMax: 180 },
-        { name: "Дзёго", hp: 220, attack: 24, rewardMin: 200, rewardMax: 280 },
-        { name: "Махито", hp: 308, attack: 30, rewardMin: 300, rewardMax: 400 },
-        { name: "Тодзё", hp: 418, attack: 38, rewardMin: 450, rewardMax: 600 },
-        { name: "Кендзяку", hp: 550, attack: 48, rewardMin: 650, rewardMax: 850 },
-        { name: "Сукуна 15п", hp: 770, attack: 60, rewardMin: 1000, rewardMax: 1500 },
-        { name: "Сукуна 20п", hp: 1100, attack: 80, rewardMin: 2000, rewardMax: 3000 },
-        { name: "Проклятие школы", hp: 140, attack: 16, rewardMin: 100, rewardMax: 160 },
-        { name: "Полу-уровень 1", hp: 180, attack: 20, rewardMin: 150, rewardMax: 220 },
-        { name: "Полу-уровень 2", hp: 220, attack: 24, rewardMin: 200, rewardMax: 280 },
-        { name: "Приспешник Гето", hp: 270, attack: 28, rewardMin: 260, rewardMax: 350 },
-        { name: "Элитный враг", hp: 320, attack: 32, rewardMin: 320, rewardMax: 430 },
-        { name: "Проклятие леса", hp: 370, attack: 36, rewardMin: 380, rewardMax: 510 },
-        { name: "Проклятие горы", hp: 420, attack: 40, rewardMin: 450, rewardMax: 600 },
-        { name: "Проклятие океана", hp: 480, attack: 44, rewardMin: 530, rewardMax: 700 },
-        { name: "Проклятие неба", hp: 550, attack: 48, rewardMin: 620, rewardMax: 820 },
-        { name: "Древний дух", hp: 630, attack: 52, rewardMin: 720, rewardMax: 950 },
-        { name: "Проклятие города", hp: 720, attack: 56, rewardMin: 830, rewardMax: 1100 },
-        { name: "Проклятие храма", hp: 820, attack: 60, rewardMin: 950, rewardMax: 1250 },
-        { name: "Проклятие кладбища", hp: 930, attack: 64, rewardMin: 1080, rewardMax: 1420 },
-        { name: "Проклятие замка", hp: 1050, attack: 68, rewardMin: 1220, rewardMax: 1600 },
-        { name: "Проклятие измерения", hp: 1180, attack: 72, rewardMin: 1370, rewardMax: 1800 },
-        { name: "Повелитель проклятий 1", hp: 1320, attack: 76, rewardMin: 1530, rewardMax: 2010 },
-        { name: "Повелитель проклятий 2", hp: 1470, attack: 80, rewardMin: 1700, rewardMax: 2240 },
-        { name: "Повелитель проклятий 3", hp: 1630, attack: 84, rewardMin: 1880, rewardMax: 2480 },
-        { name: "Владыка тьмы", hp: 1800, attack: 88, rewardMin: 2070, rewardMax: 2740 },
-        { name: "Король проклятий (финал)", hp: 2000, attack: 92, rewardMin: 2300, rewardMax: 3000 }
-    ];
+     let enemies = [
+    // Главы 1-10
+    { name: "Школьное проклятие", hp: 35, attack: 8, rewardMin: 100, rewardMax: 300 },
+    { name: "Проклятие в техникуме", hp: 60, attack: 12, rewardMin: 250, rewardMax: 600 },
+    { name: "Кефа", hp: 95, attack: 16, rewardMin: 500, rewardMax: 1000 },
+    { name: "Ханамо", hp: 140, attack: 20, rewardMin: 800, rewardMax: 1500 },
+    { name: "Дзёго", hp: 200, attack: 24, rewardMin: 1200, rewardMax: 2500 },
+    { name: "Махито", hp: 280, attack: 28, rewardMin: 2000, rewardMax: 4000 },
+    { name: "Тодзё", hp: 380, attack: 32, rewardMin: 3500, rewardMax: 7000 },
+    { name: "Кендзяку", hp: 500, attack: 38, rewardMin: 6000, rewardMax: 12000 },
+    { name: "Сукуна 15п", hp: 680, attack: 45, rewardMin: 10000, rewardMax: 20000 },
+    { name: "Сукуна 20п", hp: 900, attack: 55, rewardMin: 15000, rewardMax: 30000 },
+    
+    // Главы 11-20
+    { name: "Проклятие школы", hp: 180, attack: 28, rewardMin: 8000, rewardMax: 15000 },
+    { name: "Полу-уровень 1", hp: 250, attack: 34, rewardMin: 15000, rewardMax: 30000 },
+    { name: "Полу-уровень 2", hp: 340, attack: 40, rewardMin: 25000, rewardMax: 50000 },
+    { name: "Приспешник Гето", hp: 450, attack: 46, rewardMin: 40000, rewardMax: 80000 },
+    { name: "Элитный враг", hp: 580, attack: 52, rewardMin: 60000, rewardMax: 120000 },
+    { name: "Проклятие леса", hp: 730, attack: 58, rewardMin: 90000, rewardMax: 180000 },
+    { name: "Проклятие горы", hp: 900, attack: 64, rewardMin: 130000, rewardMax: 260000 },
+    { name: "Проклятие океана", hp: 1100, attack: 70, rewardMin: 180000, rewardMax: 360000 },
+    { name: "Проклятие неба", hp: 1350, attack: 76, rewardMin: 250000, rewardMax: 500000 },
+    { name: "Древний дух", hp: 1650, attack: 82, rewardMin: 350000, rewardMax: 700000 },
+    
+    // Главы 21-30
+    { name: "Проклятие города", hp: 2000, attack: 90, rewardMin: 150000, rewardMax: 300000 },
+    { name: "Проклятие храма", hp: 2400, attack: 98, rewardMin: 250000, rewardMax: 500000 },
+    { name: "Проклятие кладбища", hp: 2900, attack: 106, rewardMin: 400000, rewardMax: 800000 },
+    { name: "Проклятие замка", hp: 3500, attack: 114, rewardMin: 600000, rewardMax: 1200000 },
+    { name: "Проклятие измерения", hp: 4200, attack: 122, rewardMin: 900000, rewardMax: 1800000 },
+    { name: "Повелитель проклятий 1", hp: 5000, attack: 132, rewardMin: 1500000, rewardMax: 3000000 },
+    { name: "Повелитель проклятий 2", hp: 6000, attack: 144, rewardMin: 2500000, rewardMax: 5000000 },
+    { name: "Повелитель проклятий 3", hp: 7200, attack: 158, rewardMin: 4000000, rewardMax: 8000000 },
+    { name: "Владыка тьмы", hp: 8600, attack: 174, rewardMin: 6000000, rewardMax: 12000000 },
+    { name: "Король проклятий (финал)", hp: 10000, attack: 192, rewardMin: 10000000, rewardMax: 20000000 }
+];
     
     let selectedChapterIndex = 0;
     let currentEnemy = JSON.parse(JSON.stringify(enemies[0]));
@@ -574,37 +579,38 @@ let loadingInterval = setInterval(() => {
     };
     
     const shopInventory = [
-        { id: "w1", type: "weapon", name: "🗡️ Ржавый клинок", attackBonus: 6, price: 80, rarity: "common" },
-        { id: "w2", type: "weapon", name: "🗡️ Стальная катана", attackBonus: 12, price: 250, rarity: "uncommon" },
-        { id: "w3", type: "weapon", name: "🗡️ Проклятый меч", attackBonus: 22, price: 600, rarity: "rare" },
-        { id: "w4", type: "weapon", name: "🗡️ Клинок рассечения", attackBonus: 35, price: 1500, rarity: "epic" },
-        { id: "w5", type: "weapon", name: "🗡️ Безграничная пустота", attackBonus: 55, price: 5000, rarity: "special" },
-        { id: "w6", type: "weapon", name: "🗡️ Малефактум", attackBonus: 90, price: 20000, rarity: "calamity" },
-        { id: "a1", type: "armor", name: "🛡️ Студенческая форма", defenseBonus: 5, price: 80, rarity: "common" },
-        { id: "a2", type: "armor", name: "🛡️ Укреплённый жилет", defenseBonus: 10, price: 250, rarity: "uncommon" },
-        { id: "a3", type: "armor", name: "🛡️ Плащ мага", defenseBonus: 17, price: 600, rarity: "rare" },
-        { id: "a4", type: "armor", name: "🛡️ Доспех энергии", defenseBonus: 26, price: 1500, rarity: "epic" },
-        { id: "a5", type: "armor", name: "🛡️ Сфера Бесконечности", defenseBonus: 40, price: 5000, rarity: "special" },
-        { id: "a6", type: "armor", name: "🛡️ Кожа Короля", defenseBonus: 60, price: 20000, rarity: "calamity" },
-        { id: "h1", type: "helmet", name: "⛑️ Повязка", hpBonus: 4, price: 80, rarity: "common" },
-        { id: "h2", type: "helmet", name: "⛑️ Защитная маска", hpBonus: 8, price: 250, rarity: "uncommon" },
-        { id: "h3", type: "helmet", name: "⛑️ Корона проклятий", hpBonus: 15, price: 600, rarity: "rare" },
-        { id: "h4", type: "helmet", name: "⛑️ Шлем древнего", hpBonus: 25, price: 1500, rarity: "epic" },
-        { id: "h5", type: "helmet", name: "⛑️ Очи Шести Глаз", hpBonus: 42, price: 5000, rarity: "special" },
-        { id: "h6", type: "helmet", name: "⛑️ Венец бедствия", hpBonus: 80, price: 20000, rarity: "calamity" },
-        { id: "b1", type: "boots", name: "👢 Кроссовки", dodgeBonus: 2, price: 80, rarity: "common" },
-        { id: "b2", type: "boots", name: "👢 Сапоги скорости", dodgeBonus: 5, price: 250, rarity: "uncommon" },
-        { id: "b3", type: "boots", name: "👢 Ботинки ветра", dodgeBonus: 8, price: 600, rarity: "rare" },
-        { id: "b4", type: "boots", name: "👢 Тени невидимости", dodgeBonus: 15, price: 1500, rarity: "epic" },
-        { id: "b5", type: "boots", name: "👢 Проекционная магия", dodgeBonus: 25, price: 5000, rarity: "special" },
-        { id: "b6", type: "boots", name: "👢 Бег сквозь измерения", dodgeBonus: 40, price: 20000, rarity: "calamity" },
-        { id: "r1", type: "relic", name: "🔮 Талисман удачи", critBonus: 6, price: 80, rarity: "common" },
-        { id: "r2", type: "relic", name: "🔮 Глаз судьбы", critBonus: 12, price: 250, rarity: "uncommon" },
-        { id: "r3", type: "relic", name: "🔮 Коготь бедствия", critBonus: 22, price: 600, rarity: "rare" },
-        { id: "r4", type: "relic", name: "🔮 Палец Сукуны", critBonus: 35, price: 1500, rarity: "epic" },
-        { id: "r5", type: "relic", name: "🔮 Кристалл Бесконечности", critBonus: 52, price: 5000, rarity: "special" },
-        { id: "r6", type: "relic", name: "🔮 Сердце Короля", critBonus: 85, price: 20000, rarity: "calamity" },
-        { id: "gacha100", type: "gacha", name: "🎲 100 КРУТОК", price: 100000, rarity: "special" }
+        { id: "w1", type: "weapon", name: "🗡️ Ржавый клинок", attackBonus: 6, price: 800, rarity: "common" },
+        { id: "w2", type: "weapon", name: "🗡️ Стальная катана", attackBonus: 12, price: 2500, rarity: "uncommon" },
+        { id: "w3", type: "weapon", name: "🗡️ Проклятый меч", attackBonus: 22, price: 6000, rarity: "rare" },
+        { id: "w4", type: "weapon", name: "🗡️ Клинок рассечения", attackBonus: 35, price: 15000, rarity: "epic" },
+        { id: "w5", type: "weapon", name: "🗡️ Безграничная пустота", attackBonus: 55, price: 50000, rarity: "special" },
+        { id: "w6", type: "weapon", name: "🗡️ Малефактум", attackBonus: 90, price: 200000, rarity: "calamity" },
+ 	{ id: "w7", type: "weapon", name: "🗡️ Меч Истребления", attackBonus: 200, price: 5000000, rarity: "calamity" },
+        { id: "a1", type: "armor", name: "🛡️ Студенческая форма", defenseBonus: 5, price: 800, rarity: "common" },
+        { id: "a2", type: "armor", name: "🛡️ Укреплённый жилет", defenseBonus: 10, price: 2500, rarity: "uncommon" },
+        { id: "a3", type: "armor", name: "🛡️ Плащ мага", defenseBonus: 17, price: 6000, rarity: "rare" },
+        { id: "a4", type: "armor", name: "🛡️ Доспех энергии", defenseBonus: 26, price: 15000, rarity: "epic" },
+        { id: "a5", type: "armor", name: "🛡️ Сфера Бесконечности", defenseBonus: 40, price: 50000, rarity: "special" },
+        { id: "a6", type: "armor", name: "🛡️ Кожа Короля", defenseBonus: 60, price: 200000, rarity: "calamity" },
+        { id: "h1", type: "helmet", name: "⛑️ Повязка", hpBonus: 4, price: 800, rarity: "common" },
+        { id: "h2", type: "helmet", name: "⛑️ Защитная маска", hpBonus: 8, price: 2500, rarity: "uncommon" },
+        { id: "h3", type: "helmet", name: "⛑️ Корона проклятий", hpBonus: 15, price: 6000, rarity: "rare" },
+        { id: "h4", type: "helmet", name: "⛑️ Шлем древнего", hpBonus: 25, price: 15000, rarity: "epic" },
+        { id: "h5", type: "helmet", name: "⛑️ Очи Шести Глаз", hpBonus: 42, price: 50000, rarity: "special" },
+        { id: "h6", type: "helmet", name: "⛑️ Венец бедствия", hpBonus: 80, price: 200000, rarity: "calamity" },
+        { id: "b1", type: "boots", name: "👢 Кроссовки", dodgeBonus: 2, price: 800, rarity: "common" },
+        { id: "b2", type: "boots", name: "👢 Сапоги скорости", dodgeBonus: 5, price: 2500, rarity: "uncommon" },
+        { id: "b3", type: "boots", name: "👢 Ботинки ветра", dodgeBonus: 8, price: 6000, rarity: "rare" },
+        { id: "b4", type: "boots", name: "👢 Тени невидимости", dodgeBonus: 15, price: 15000, rarity: "epic" },
+        { id: "b5", type: "boots", name: "👢 Проекционная магия", dodgeBonus: 25, price: 50000, rarity: "special" },
+        { id: "b6", type: "boots", name: "👢 Бег сквозь измерения", dodgeBonus: 40, price: 200000, rarity: "calamity" },
+        { id: "r1", type: "relic", name: "🔮 Талисман удачи", critBonus: 6, price: 800, rarity: "common" },
+        { id: "r2", type: "relic", name: "🔮 Глаз судьбы", critBonus: 12, price: 2500, rarity: "uncommon" },
+        { id: "r3", type: "relic", name: "🔮 Коготь бедствия", critBonus: 22, price: 6000, rarity: "rare" },
+        { id: "r4", type: "relic", name: "🔮 Палец Сукуны", critBonus: 35, price: 15000, rarity: "epic" },
+        { id: "r5", type: "relic", name: "🔮 Кристалл Бесконечности", critBonus: 52, price: 50000, rarity: "special" },
+        { id: "r6", type: "relic", name: "🔮 Сердце Короля", critBonus: 85, price: 200000, rarity: "calamity" },
+        { id: "gacha100", type: "gacha", name: "🎲 100 КРУТОК", price: 10000000, rarity: "special" }
     ];
     
     let achievements = {
@@ -1093,11 +1099,11 @@ let totalKills = 0, totalYenEarned = 0, totalGacha = 0, goldenKills = 0;
     
     const jobsData = [
         { id: "odd", name: "📦 Странные поручения", baseReward: 100, unlockChapter: 1 },
-        { id: "patrol", name: "🔍 Патруль проклятий", baseReward: 250, unlockChapter: 1 },
-        { id: "exorcism", name: "⚔️ Изгнание проклятий", baseReward: 500, unlockChapter: 2 },
-        { id: "relic", name: "🏺 Охота за реликвиями", baseReward: 900, unlockChapter: 3 },
-        { id: "jujutsu", name: "🎯 Миссии магов", baseReward: 1500, unlockChapter: 4 },
-        { id: "special", name: "🔥 Особый класс", baseReward: 2500, unlockChapter: 5 }
+        { id: "patrol", name: "🔍 Патруль проклятий", baseReward: 250, unlockChapter: 3 },
+        { id: "exorcism", name: "⚔️ Изгнание проклятий", baseReward: 500, unlockChapter: 5 },
+        { id: "relic", name: "🏺 Охота за реликвиями", baseReward: 1000, unlockChapter: 7 },
+        { id: "jujutsu", name: "🎯 Миссии магов", baseReward: 2000, unlockChapter: 10 },
+        { id: "special", name: "🔥 Особый класс", baseReward: 3500, unlockChapter: 15 }
     ];
     
     function renderJobs() { 
