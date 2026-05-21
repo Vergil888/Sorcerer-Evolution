@@ -1501,7 +1501,78 @@ let totalKills = 0, totalYenEarned = 0, totalGacha = 0, goldenKills = 0;
     addLog("✨ АНИМАЦИИ ДЛЯ LIMITLESS: красная вспышка, синий вихрь, вращающийся шар, щит!");
        spawnGoldenEnemy();
     renderBuffs();
-
+    // ========== ТУТОРИАЛ ==========
+    let tutorialShown = localStorage.getItem("tutorialShown");
+    if (!tutorialShown) {
+        setTimeout(() => {
+            let tutorialDiv = document.createElement('div');
+            tutorialDiv.id = 'tutorialOverlay';
+            tutorialDiv.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:10000;display:flex;justify-content:center;align-items:center;flex-direction:column;';
+            tutorialDiv.innerHTML = `
+                <div style="background:#1a1a2a;border:2px solid #ff9800;border-radius:20px;padding:20px;max-width:90%;width:350px;text-align:center;">
+                    <div id="tutStep1">
+                        <h3 style="color:#ff9800;">⚔️ ДОБРО ПОЖАЛОВАТЬ, МАГ! ⚔️</h3>
+                        <p style="margin:15px 0;">Твоя цель — проходить главы и побеждать проклятий.<br>Каждая победа приносит иены и предметы.</p>
+                        <button id="tutNext1" class="btn-primary">ДАЛЕЕ →</button>
+                    </div>
+                    <div id="tutStep2" style="display:none;">
+                        <h3 style="color:#ff9800;">🤜 КАК АТАКОВАТЬ</h3>
+                        <p>Нажимай на большую кнопку <strong style="color:#ff9800;">"ФИЗИЧЕСКАЯ АТАКА"</strong> внизу экрана.</p>
+                        <button id="tutPrev2" class="btn-test">← НАЗАД</button>
+                        <button id="tutNext2" class="btn-primary">ДАЛЕЕ →</button>
+                    </div>
+                    <div id="tutStep3" style="display:none;">
+                        <h3 style="color:#ff9800;">🌀 ТЕХНИКИ</h3>
+                        <p>Во вкладке <strong>"КРУТКИ"</strong> за монеты можно получить техники и родословные.</p>
+                        <button id="tutPrev3" class="btn-test">← НАЗАД</button>
+                        <button id="tutNext3" class="btn-primary">ДАЛЕЕ →</button>
+                    </div>
+                    <div id="tutStep4" style="display:none;">
+                        <h3 style="color:#ff9800;">📦 ЭКИПИРОВКА</h3>
+                        <p>Предметы выпадают с врагов. Зайди в <strong>"ИНВЕНТАРЬ"</strong> и кликни по предмету, чтобы надеть.</p>
+                        <button id="tutPrev4" class="btn-test">← НАЗАД</button>
+                        <button id="tutNext4" class="btn-primary">ДАЛЕЕ →</button>
+                    </div>
+                    <div id="tutStep5" style="display:none;">
+                        <h3 style="color:#ff9800;">💼 РАБОТЫ И БОНУСЫ</h3>
+                        <p><strong>"РАБОТЫ"</strong> дают пассивный доход. <strong>"ЕЖЕДНЕВНЫЙ"</strong> бонус — заходи каждый день!</p>
+                        <button id="tutPrev5" class="btn-test">← НАЗАД</button>
+                        <button id="tutNext5" class="btn-primary">ДАЛЕЕ →</button>
+                    </div>
+                    <div id="tutStep6" style="display:none;">
+                        <h3 style="color:#ffd700;">✨ ЗОЛОТЫЕ ВРАГИ ✨</h3>
+                        <p>С шансом <strong style="color:#ffd700;">5%</strong> появляется <strong style="color:#ffd700;">ЗОЛОТОЙ ВРАГ</strong>! Он даёт <strong>×2 награду</strong> (до 50 000 иен)!</p>
+                        <button id="tutPrev6" class="btn-test">← НАЗАД</button>
+                        <button id="tutFinish" class="btn-primary">🏆 НАЧАТЬ ИГРУ</button>
+                    </div>
+                </div>
+                <button id="tutSkip" style="margin-top:15px;background:none;border:1px solid #888;">ПРОПУСТИТЬ</button>
+            `;
+            document.body.appendChild(tutorialDiv);
+            
+            let step = 1;
+            function showStep(s) {
+                document.getElementById('tutStep1').style.display = s === 1 ? 'block' : 'none';
+                document.getElementById('tutStep2').style.display = s === 2 ? 'block' : 'none';
+                document.getElementById('tutStep3').style.display = s === 3 ? 'block' : 'none';
+                document.getElementById('tutStep4').style.display = s === 4 ? 'block' : 'none';
+                document.getElementById('tutStep5').style.display = s === 5 ? 'block' : 'none';
+                document.getElementById('tutStep6').style.display = s === 6 ? 'block' : 'none';
+            }
+            document.getElementById('tutNext1').onclick = () => { step = 2; showStep(2); };
+            document.getElementById('tutNext2').onclick = () => { step = 3; showStep(3); };
+            document.getElementById('tutNext3').onclick = () => { step = 4; showStep(4); };
+            document.getElementById('tutNext4').onclick = () => { step = 5; showStep(5); };
+            document.getElementById('tutNext5').onclick = () => { step = 6; showStep(6); };
+            document.getElementById('tutPrev2').onclick = () => { step = 1; showStep(1); };
+            document.getElementById('tutPrev3').onclick = () => { step = 2; showStep(2); };
+            document.getElementById('tutPrev4').onclick = () => { step = 3; showStep(3); };
+            document.getElementById('tutPrev5').onclick = () => { step = 4; showStep(4); };
+            document.getElementById('tutPrev6').onclick = () => { step = 5; showStep(5); };
+            document.getElementById('tutFinish').onclick = () => { tutorialDiv.remove(); localStorage.setItem('tutorialShown', 'true'); };
+            document.getElementById('tutSkip').onclick = () => { tutorialDiv.remove(); localStorage.setItem('tutorialShown', 'true'); };
+        }, 500);
+    }
 function renderBuffs() {
     let buffsContainer = document.getElementById("buffsList");
     if (!buffsContainer) return;
@@ -1534,9 +1605,7 @@ function renderBuffs() {
     if (!hasBuffs) buffsHtml = "Нет активных баффов";
     buffsContainer.innerHTML = buffsHtml;
 }
-</script>
-</body>
-</html>
+
 </script>
 </body>
 </html>
